@@ -1,0 +1,240 @@
+
+
+/*<!DOCTYPE html>2 
+<html lang="en">
+
+
+<head>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="p-relative">
+
+  <div class="main-container">
+    <div class="slide-page p-fixed t-0 l-0">
+      <div id="Menu">
+        <h1>ADMIN</h1>
+        <div class="menu">
+          <a href="/">
+            <i class="fa-solid fa-bars"></i>
+            Home page
+          </a>
+          <a class="active user" href="/login/admin">
+            <i class="fa-solid fa-users"></i>
+            User Management
+          </a>
+
+
+          <a class="content" href="/login/admin/songmanagement">
+            <i class="fa-solid fa-music"></i>
+            Song Management
+          </a>
+
+          <a class="album" href="/login/admin/playlistmanagement">
+            <i class="fa-solid fa-table-list"></i>
+            PlayList Management
+          </a>
+
+          <a class="album" href="/login/admin/albummanagement">
+            <i class="fa-solid fa-compact-disc"></i>
+            ALbum Management
+          </a>
+          <a class="artist" href="/login/admin/artistmanagement">
+            <i class="fa-solid fa-microphone"></i>
+            Artist Management
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <header class="flex a-center p-fixed t-0 r-0">
+      <div class="account flex a-center">
+        <img src="image/Ellipse 2.png" alt="" />
+        <h4 class="name">Alex</h4>
+      </div>
+    </header>
+    <div class="main-page">
+      <!-- trang quản lí user  -->
+      <div class="user-management">
+        <h2>User Management</h2>
+        <div class="header flex a-center">
+          <button class="arrange"><i
+              class="fa-solid fa-arrow-up-z-a"
+            ></i></button>
+          <h3>User list</h3>
+          <form action="" class="search search-user">
+            <div class="input-group">
+              <label for="search-user">
+                <i class="fa-solid fa-magnifying-glass"></i></label>
+              <input
+                id="search-user"
+                type="text"
+                placeholder="Search for user "
+              />
+            </div>
+          </form>
+          <div class="line"></div>
+        </div>
+        <div class="user-list">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Image</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              {{#each usermangement}}
+                <tr class="user">
+                  <th class="image_user"><img src="{{Image}}" alt="" /></th>
+                  <td class="name_user">{{UserName}}</td>
+                  <td class="email_user">{{Email}}</td>
+                  <td class="password_user">{{Password}}</td>
+                  <td class="dateofbirth_user">{{DateOfBirth}}</td>
+                  <td>
+                    <button class="update">
+                      <a href="/login/admin/{{UserID}}/edit">
+                        <i class="fa-solid fa-pencil"></i>
+                      </a>
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      class="delete"
+                      data-toggle="modal"
+                      data-target="#delete-user-modal"
+                      data-id="{{UserID}}"
+                    >
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  </td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <button
+          type="button"
+          class="btns btn-add-user"
+          onclick="modal3Show()"
+        >Add User</button>
+      </div>
+    </div>
+  </div>
+  <!-- modal chỉnh sửa và thêm user -->
+  <div class="modal modal-3">
+    <div class="flex a-center j-center">
+      <form
+        method="post"
+        action="store"
+        class="modal-style user-information flex a-center j-between"
+      >
+        <h3>User Information</h3>
+        <img src="/img/Rectangle 33.png" alt="" class="avatar-playlist" />
+        <label for="avatar" class="lable-edit">Edit Photo</label>
+        <input
+          type="file"
+          name="Image"
+          id="avatar"
+          accept="image/png, image/jpeg"
+        />
+
+        <div class="input-group">
+          <label for="name-user">Name</label>
+          <input
+            name="UserName"
+            id="name-user"
+            type="text"
+            placeholder="Name"
+          />
+        </div>
+        <div class="form-input">
+
+        </div>
+        <div class="input-group">
+          <label for="email">Your Email</label>
+          <input name="Email" id="email" type="text" placeholder="Your Email" />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            name="Password"
+            id="password"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="input-group">
+          <label for="birthday">Your Birthday</label>
+          <input
+            name="DateOfBirth"
+            id="birthday"
+            type="text"
+            placeholder="Your Birthday"
+          />
+        </div>
+        <button class="btn-confirm">
+          Confirm
+        </button>
+      </form>
+      <button onclick="modal3close()" class="close-modal p-absolute"><i
+          class="fa-solid fa-xmark"
+        ></i></button>
+    </div>
+  </div>
+
+  <div
+    id="delete-user-modal"
+    class="modal modal-delete"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete User</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete this user?</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            id="btn-delete-user"
+            type="button"
+            class="btn btn-primary"
+          >Save changes</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form method="post" name="delete-user-form"></form>
+
+  <script src="/js/admin.js"></script>
+
+</body>

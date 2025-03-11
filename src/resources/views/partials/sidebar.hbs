@@ -1,0 +1,36 @@
+<div class="slide-page p-fixed t-0 l-0">
+    <!-- Menu -->
+    <div class="Menu">
+        <a id="Menu" href="/">Menu</a>
+        <div class="menu-list">
+            <a href="/presentplayed">Present played</a>
+            <a href="/topchart">Top Charts</a>
+            <a href="/madeforyou">Made for you</a>
+            <a href="/playlist">PlayList</a>
+            <a href="/favouritesong">Favourite Song</a>
+        </div>
+    </div>
+    <div class="line"></div>
+    <!-- Library -->
+    <div id="Library" class="flex j-between">
+        <div>
+            <a href="./library/library.html">Personal playlist</a>
+            <div class="list-music  ">
+                {{#each playlistsong}}
+                <div class="playlist flex a-center">
+                    <a href=""><img src="/img/Rectangle 33.png" alt=""></a>
+                    <div class="detail ">
+                        <h3>{{Name}}</h3>
+                        <a href="">{{Describe}}</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <!-- nút tạo thêm mới playlist -->
+        <button id="add-playlist">
+            Add PLaylist
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </div>
+</div>

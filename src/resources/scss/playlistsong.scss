@@ -1,0 +1,487 @@
+@import "flex";
+@import "variables";
+@import "position";
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+.slide-page {
+  width: 15%;
+  height: 94%;
+  box-sizing: border-box;
+  background-color: $bg-slider;
+  .Menu {
+    padding: 25px 0 0 25px;
+    height: 35%;
+    #Menu {
+      font-size: 1.5em;
+      color: $text-color;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .menu-list {
+      a {
+        display: block;
+        color: $text-color-bold;
+        font-size: 0.875em;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 16px;
+        transition: 0.3s;
+        &:hover {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+  .line {
+    width: 80%;
+    height: 1px;
+    background-color: $bg-line;
+    margin: auto;
+  }
+  #Library {
+    padding: 20px;
+    height: 65%;
+    flex-direction: column;
+    a {
+      color: $text-color;
+      font-size: 1.5em;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+    .list-music {
+      margin-top: 20px;
+      .playlist {
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        img {
+          margin-right: 24px;
+          width: 56px;
+        }
+        .detail {
+          h3 {
+            color: $text-color-bold;
+            font-size: 1em;
+          }
+          a {
+            color: $text-color;
+            font-size: 0.7em;
+          }
+        }
+        &:hover {
+          background-color: $bg-color;
+          opacity: 0.8;
+          box-shadow: 0 0 50px 11px rgba(23, 24, 29, 0.8);
+        }
+      }
+    }
+    #add-playlist {
+      color: $text-color;
+      font-size: 1em;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 80%;
+      border-radius: 10px;
+      padding: 5px;
+      border: 1px solid $text-color;
+      transition: 0.3s;
+      &:hover {
+        background-color: $bg-color;
+        opacity: 0.8;
+        border: none;
+        box-shadow: 0 0 50px 11px rgba(23, 24, 29, 0.8);
+      }
+    }
+  }
+}
+
+.player-control {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: $bg-color-1;
+  .list-music {
+    a {
+      img {
+        width: 40px;
+        margin-right: 24px;
+      }
+    }
+    .detail {
+      h3 {
+        color: $text-color-bold;
+        font-size: 1em;
+      }
+      a {
+        color: $text-color;
+        font-size: 0.7em;
+      }
+    }
+  }
+  .control-bar {
+    width: 40vw;
+    flex-direction: column;
+    .actions {
+      margin-bottom: 10px;
+      button {
+        cursor: pointer;
+        font-size: 1.25em;
+        color: $text-color;
+      }
+      .pause {
+        margin: 0 70px;
+      }
+    }
+  }
+
+  .duration-bar {
+    width: 100%;
+    span {
+      color: $text-color;
+      opacity: 0.5;
+      font-size: 0.75em;
+    }
+    .left {
+      margin-right: 5px;
+    }
+    .right {
+      margin-left: 5px;
+    }
+    .time-bar {
+      width: 80%;
+      height: 5px;
+      cursor: pointer;
+      background-color: #fcd9b8;
+      border-radius: 20px;
+    }
+  }
+  .volume {
+    i {
+      color: #ffffff;
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 5px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    .volume-bar {
+      width: 100px;
+      height: 5px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  }
+}
+
+.main-page {
+  width: 85%;
+  margin-left: auto;
+  background-color: $bg-color;
+  padding-bottom: 75px;
+  height: 100%;
+  header {
+    width: 100%;
+    padding: 20px;
+    .arrows {
+      margin-right: 60px;
+      button {
+        color: $text-color;
+        font-size: 1.25em;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+    form {
+      width: 50%;
+      .input-group {
+        background-color: $bg-slider;
+        padding: 10px;
+        border-radius: 20px;
+        label {
+          font-size: 1em;
+          color: #ffffff;
+        }
+        input {
+          width: 95%;
+          color: $text-color;
+          opacity: 0.8;
+          &::placeholder {
+            color: $text-color;
+            font-size: 0.875em;
+          }
+        }
+      }
+    }
+    .account {
+      margin-left: auto;
+      img {
+        width: 40px;
+      }
+      .name {
+        color: $text-color;
+        font-size: 1.25em;
+        font-style: normal;
+        font-weight: 700;
+        margin-left: 15px;
+      }
+    }
+  }
+  .album-detail-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    .album-poster {
+      width: 20%;
+      flex-direction: column;
+      .poster {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        img {
+          width: 300px;
+          transition: 0.3s;
+        }
+        &::after {
+          content: "\f04b";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 700;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          visibility: hidden;
+          padding: 10px;
+          font-size: 40px;
+          background-color: rgba(224, 145, 69, 0.5);
+          color: $text-color;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #333;
+          border-radius: 20px;
+          opacity: 0;
+          visibility: hidden;
+          transition: 0.3s;
+        }
+        &:hover {
+          img {
+            transform: scale(1.2);
+            z-index: 1;
+          }
+          &::before {
+            opacity: 0.5;
+            visibility: visible;
+            z-index: 2;
+          }
+          &::after {
+            opacity: 1;
+            visibility: visible;
+            z-index: 3;
+          }
+        }
+      }
+      .name-album {
+        font-size: 1.5em;
+        color: $text-color-bold;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+      .author {
+        font-size: 1em;
+        color: $text-color;
+        display: block;
+      }
+      .play {
+        color: $text-color;
+        padding: 10px;
+        border: 1px solid $text-color;
+        margin: 10px 0;
+        border-radius: 20px;
+        width: 60%;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background-color: $hover-color;
+          color: #ffffff;
+          border: 1px solid $hover-color;
+        }
+      }
+      .btns {
+        button {
+          i {
+            color: $text-color;
+            font-size: 1em;
+            padding: 10px;
+            background-color: $bg-icon-color;
+            border-radius: 50%;
+            margin-right: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+              background-color: $hover-color;
+            }
+          }
+        }
+      }
+    }
+
+    .album-song {
+      width: 75%;
+      .header {
+        .arrange {
+          i {
+            color: $text-color;
+            border: 1px solid $text-color;
+            padding: 2px;
+            font-size: 0.7em;
+            border-radius: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+        }
+        h3 {
+          color: $text-color;
+          font-size: 1em;
+          font-weight: 600;
+        }
+        .line {
+          width: 100%;
+          height: 1px;
+          background-color: $bg-icon-color;
+          margin-top: 10px;
+        }
+      }
+    }
+    .media-list {
+      width: 100%;
+      margin-top: 10px;
+      .media-item {
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        transition: 0.3s;
+        cursor: pointer;
+        .media-left {
+          img {
+            margin-right: 20px;
+            width: 50px;
+          }
+          .detail {
+            h3 {
+              color: $text-color;
+              font-size: 1em;
+            }
+            span {
+              color: $text-color;
+              font-size: 0.7em;
+            }
+          }
+        }
+        .media-right {
+          .time {
+            font-size: 1em;
+            font-weight: 400;
+            color: $text-color;
+            margin-right: 15px;
+          }
+          button {
+            font-size: 1em;
+            font-weight: 600;
+            color: $text-color;
+            margin-right: 15px;
+            cursor: pointer;
+          }
+          .like {
+            color: #a50004;
+          }
+          .unlike {
+            color: $text-color;
+          }
+        }
+        &:hover {
+          border-radius: 20px;
+          background-color: #f17a37;
+          box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.53) inset;
+        }
+      }
+    }
+  }
+}
+
+
+.btnss {
+  button {
+    i {
+      color: $text-color;
+      font-size: 1em;
+      padding: 10px;
+      background-color: $bg-icon-color;
+      border-radius: 50%;
+      margin-right: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+}
+
+//  thanh nhạc
+.progress-area {
+  height: 6px;
+  width: 100%;
+  background: var(--slate-100);
+  border-radius: 50px;
+  cursor: pointer;
+}
+.progress-area .progress-bar {
+  position: relative;
+  height: inherit;
+  border-radius: inherit;
+  width: 0%;
+  background: var(--green);
+}
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background: var(--greenshadow);
+  border-radius: inherit;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.progress-area:hover .progress-bar::before {
+  opacity: 1;
+}
+

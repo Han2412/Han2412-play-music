@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/user.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <title>Music App</title>
+</head>
+
+<body class="p-relative">
+    <div class="main-container">
+        <div class="slide-page p-fixed t-0 l-0">
+            <div class="Menu">
+                <h1>USER</h1>
+                <div class="menu-list">
+                    <a href="login.html" class="flex a-center">
+                        <i class="fa-solid fa-bars"></i>
+                        Home page
+                    </a>
+                    <a class="active user" href="#">
+                        <i class="fa-solid fa-users"></i>
+                        User Information</a>
+                </div>
+            </div>
+        </div>
+        <header class="flex a-center p-fixed t-0 r-0">
+            <div class="account flex a-center">
+                <img src="image/Ellipse 2.png" alt="">
+                <h4 class="name">Alex</h4>
+            </div>
+        </header>
+        <div class="main-page">
+            <!-- trang quản lí user  -->
+            <div class="user-information flex a-center ">
+                <h1>User Information</h1>
+                <img src=" image/Rectangle 33.png" alt="" class="avatar-playlist">
+                <label for="avatar-user" class="lable-edit">Edit Photo User</label>
+                <input type="file" name="avatar-playlist" id="avatar-user" accept="image/png, image/jpeg" />
+                <div class="information flex a-center j-between">
+                    <div class="item-group">
+                        <span>Name</span>
+                        <h4 class="name-user">Alex</h4>
+                    </div>
+                    <div class="item-group">
+                        <span>Email</span>
+                        <h4 class="email-user">lequanquocthinh95th@gmail.com</h4>
+                    </div>
+                    <div class="item-group">
+                        <span>Password</span>
+                        <h4 class="password-user">Password</h4>
+                    </div>
+                    <div class="item-group">
+                        <span>Birthday</span>
+                        <h4 class="birthday-user">08/11/2002</h4>
+                    </div>
+                </div>
+                <div class="button flex a-center j-between">
+                    <button class="btns btn-edit-user">
+                        Edit User Information
+                    </button>
+                    <button class="btns btn-edit-password">
+                        change Password
+                    </button>
+                    <button class="btns btn-log-out">
+                        Log out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- modal chỉnh sửa thông tin user -->
+    <div class="modal modal-3">
+        <div class="modal-style edit-user-information flex a-center j-center">
+            <h3>User Information</h3>
+            <img src="image/Rectangle 33.png" alt="" class="avatar-playlist">
+            <label for="avatar-user" class="lable-edit">Edit Photo User</label>
+            <input type="file" name="avatar-playlist" id="avatar-user" accept="image/png, image/jpeg" />
+            <form action="" class="flex a-center j-between">
+                <div class="input-group">
+                    <label for="name-user">Name</label>
+                    <input id="name-user" type="text" placeholder="Name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Your Email</label>
+                    <input id="email" type="text" placeholder="Your Email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <label for="birthday">Your Birthday</label>
+                    <input id="birthday" type="text" placeholder="Your Birthday">
+                </div>
+            </form>
+            <button class="btn-confirm">
+                Confirm
+            </button>
+        </div>
+    </div>
+    <!-- modal thay đổi mật khẩu  -->
+    <div class="modal modal-4">
+        <div class="modal-style change-password flex a-center j-center">
+            <h3>Change Password</h3>
+            <form action="" class="changepassword">
+                <div class="input-group">
+                    <label for="current-password">current password</label>
+                    <input id="current-password" type="text" placeholder="current password">
+                </div>
+                <div class="input-group">
+                    <label for="new-password">New Password</label>
+                    <input id="new-password" type="text" placeholder="New Password">
+                </div>
+                <div class="input-group">
+                    <label for="enter-password">Enter The Password</label>
+                    <input id="enter-password" type="text" placeholder="Enter The Password">
+                </div>
+            </form>
+            <button class="btn-confirm">
+                Confirm
+            </button>
+        </div>
+    </div>
+
+</body>
+
+
+</script>
+<script src="/js/user.js"></script>
+
+</html>

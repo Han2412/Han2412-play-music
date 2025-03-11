@@ -1,0 +1,57 @@
+<div class="main-page">
+    <section>
+        <div class="title flex a-center">
+            <h2>Present played</h2>
+            <nav>
+                <ul class="flex a-center">
+                    <li class="style active Song">Song</li>
+                    <li class="style  Album">Ablum</li>
+                    <li class=" style Playlist">Playlist</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="line"></div>
+        <div class="Music flex a-center ">
+         {{!-- {{#each songs }}   
+            <div id="{{id}}" class="list-song ">
+                <a class="song" href="../album/album.html"><img src=" ../image/Rectangle 5.png" alt=""></a>
+                <a href="" class="name-list">{{title}}</a>
+                <span href="">Derva</span>
+            </div> 
+          {{/each}}   
+           --}}
+        </div>
+
+        <div class="bottom-section">
+            <div class="media-list">
+                {{#each resulta}}
+                 <div  li-index="{{link}}" >
+                    <div class="media-item flex a-center j-between">
+                <div class="media-left flex a-center ">
+                    <a href=" "><img src="{{image}}" alt=""></a>
+                <div class="detail">
+                    <h3>{{title}}</h3>
+                    <a href=""></a>
+                </div>
+                    <audio id = "main-audio"class="" src="" type="audio/mpeg" ></audio>
+                        
+                <span class="audio-duration"  ></span>
+                </div>
+                    <div class="media-right">
+                            <span class="time" id="">{{song_time}} </span>
+                            <button class="heart "><i class="fa-solid fa-heart like"></i></button>
+                            <button class="plus"><i class="fa-solid fa-plus "></i></button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}      
+              
+               
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/js/presentplayed.js"></script>
+{{!-- <script src="/js/presentplayed.js"></script> --}}

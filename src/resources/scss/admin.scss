@@ -1,0 +1,510 @@
+@import "flex";
+@import "variables";
+@import "position";
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: $text-color;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $bg-color;
+}
+.main-container {
+  width: 100%;
+  height: 100vh;
+}
+.slide-page {
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $bg-slider;
+  #Menu {
+    padding: 25px 0 0 25px;
+    height: 35%;
+    width: 100%;
+    h1 {
+      font-size: 2em;
+      color: $text-color;
+      margin-bottom: 10px;
+    }
+    .menu {
+      width: 100%;
+      a {
+        color: $text-color-bold;
+        font-size: 0.875em;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 30px;
+        transition: 0.3s;
+        border: 1px solid $text-color;
+        padding: 10px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 90%;
+        &:hover {
+          transform: translateX(10px);
+          border: 1px solid $text-color-bold;
+          background-color: $text-color-bold;
+          color: $bg-color;
+          text-decoration: none;
+        }
+        &.active {
+          transform: translateX(10px);
+          border: 1px solid $text-color-bold;
+          background-color: $text-color-bold;
+          color: $bg-color;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+header {
+  width: 85%;
+  padding: 20px;
+  background-color: $bg-color;
+  z-index: 999 !important;
+  .account {
+    margin-left: auto;
+    img {
+      width: 40px;
+    }
+    .name {
+      color: $text-color;
+      font-size: 1.25em;
+      font-style: normal;
+      font-weight: 700;
+      margin-left: 15px;
+    }
+    #login {
+      padding: 5px;
+      color: $text-color;
+      border: 1px solid $text-color;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+}
+.main-page {
+  width: 85%;
+  background-color: $bg-color;
+  padding: 75px 20px 0 20px;
+  margin-left: auto;
+  height: unset;
+  h2 {
+    font-size: 2em;
+    color: $text-color-bold;
+    margin-bottom: 20px;
+  }
+  .header {
+    margin-bottom: 20px;
+    .arrange {
+      i {
+        color: $text-color;
+        border: 1px solid $text-color;
+        padding: 2px;
+        font-size: 0.7em;
+        border-radius: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+    }
+    h3 {
+      color: $text-color;
+      font-size: 1em;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    form {
+      width: 30%;
+      .input-group {
+        background-color: $bg-slider;
+        padding: 10px;
+        border-radius: 20px;
+        margin-left: 10px;
+        label {
+          font-size: 1em;
+          color: #ffffff;
+          margin-bottom: 0;
+          margin-right: 5px;
+        }
+        input {
+          width: 95%;
+          color: $text-color;
+          opacity: 0.8;
+          &::placeholder {
+            color: $text-color;
+            font-size: 0.875em;
+          }
+        }
+      }
+    }
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: $bg-icon-color;
+      margin-top: 10px;
+    }
+  }
+  .user-management {
+    display: block;
+    .user-list {
+      color: $text-color;
+      max-height: 700px;
+      overflow-y: scroll;
+      .user {
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          border-radius: 50%;
+        }
+
+        button {
+          cursor: pointer;
+          i {
+            padding: 10px;
+            color: $text-color;
+            margin-right: 10px;
+            font-size: 0.875em;
+            transition: 0.3s;
+            &:hover {
+              background-color: $bg-icon-color;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        &:hover {
+          border-radius: 20px;
+          border: 1px solid $text-color;
+        }
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: $text-color;
+      }
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+    }
+  }
+  .content-management {
+    height: 100%;
+    h4 {
+      font-size: 1.5em;
+      color: $text-color;
+      margin-bottom: 20px;
+    }
+    .music-list {
+      width: 100%;
+      max-height: 700px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+      .music {
+        width: 48%;
+        padding: 10px;
+        border-radius: 0;
+        margin-bottom: 10px;
+        border: 1px solid $bg-color;
+        transition: 0.3s;
+        img {
+          margin-right: 20px;
+          width: 50px;
+        }
+
+        h3 {
+          color: $text-color;
+          font-size: 1em;
+        }
+        span {
+          color: $text-color;
+          font-size: 1em;
+        }
+
+        .type-music {
+          font-size: 1em;
+          color: $text-color;
+        }
+        button {
+          cursor: pointer;
+          i {
+            padding: 10px;
+            color: $text-color;
+            margin-right: 10px;
+            font-size: 0.875em;
+            transition: 0.3s;
+            &:hover {
+              background-color: $bg-icon-color;
+              border-radius: 50%;
+            }
+          }
+        }
+        &:hover {
+          border-radius: 20px;
+          border: 1px solid $text-color;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: $text-color;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+    }
+    .style {
+      margin-top: 20px;
+      .list-song {
+        padding: 10px;
+        border-radius: 20px;
+        transition: 0.3s;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        .playlist-img {
+          position: relative;
+          img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+          }
+          &::after {
+            content: "\f04b";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 700;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            padding: 10px;
+            font-size: 40px;
+            background-color: rgba(224, 145, 69, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+          }
+          &::before {
+            content: "";
+            width: 100%;
+            height: 99%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+          }
+          &:hover {
+            &::before {
+              opacity: 0.5;
+              visibility: visible;
+            }
+            &::after {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        h4 {
+          font-size: 1em;
+          font-weight: 700;
+          color: $text-color;
+          margin: 6px 0;
+        }
+        span {
+          color: $text-color;
+          font-size: 0.7em;
+          max-width: 200px;
+        }
+        &:hover {
+          background: #f17a37;
+          box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.53) inset;
+        }
+      }
+    }
+  }
+}
+.btns {
+  padding: 10px 20px;
+  color: $text-color;
+  border: 1px solid $text-color-bold;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $text-color-bold;
+    color: $bg-color;
+    border-radius: 20px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba($bg-color, 0.8);
+  display: none;
+}
+.modal-style {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid $text-color-bold;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px $bg-color-1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $bg-color;
+  max-width: 900px;
+  flex-direction: column;
+  #avatar {
+    display: none;
+  }
+
+  h3 {
+    color: $text-color-bold;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+  .lable-edit {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+
+  .input-group {
+    width: 48%;
+    margin-bottom: 20px;
+    label {
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 22px;
+      color: $text-color;
+    }
+    input,
+    textarea {
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      border: 1px solid $text-color;
+      border-radius: 5px;
+      padding: 9px 12px;
+      color: $text-color;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14.4px;
+        line-height: 20px;
+        color: $text-color;
+      }
+    }
+  }
+}
+.close-modal {
+  padding: 5px 10px;
+  border: 1px solid $text-color;
+  color: $text-color-bold;
+  border-radius: 10px;
+  cursor: pointer;
+  top: 15%;
+  right: 28%;
+
+  transition: 0.3s;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: $text-color-bold;
+    color: #ffffff;
+    border: 1px solid $text-color-bold;
+  }
+}
+
+.modal-8 {
+  display: block !important;
+}
+.modal-7-edit {
+  display: block !important;
+}
+#error-message {
+  font-size: 1em;
+  color: $text-color;
+}
+
+textarea {
+  background-color: $bg-color;
+  height: 100px;
+}
+.close-add-playlist {
+  top: 25%;
+  right: 28%;
+}
+
+.player-control {
+  display: none;
+}

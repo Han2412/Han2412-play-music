@@ -1,0 +1,20 @@
+<div class="main-page">
+    <section>
+        <div class="title flex a-center">
+            <h2>PlayList</h2>
+            <button id="play">
+                <i class="fa-solid fa-caret-right"></i>
+            </button>
+        </div>
+        <div class="Music flex a-center">
+
+            {{#each playlist}}
+            <div class="list-song">
+                <a class="song" href="/playlist/{{PlaylistID}}"><img src="{{Image}}" alt=""></a>
+                <a href="" class="name-list">{{Name}}</a>
+                <span href="">{{Describe}}</span>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</div>

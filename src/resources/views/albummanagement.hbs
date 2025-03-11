@@ -1,0 +1,191 @@
+<head>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body class="p-relative">
+  <div class="main-container">
+    <div class="slide-page p-fixed t-0 l-0">
+      <div id="Menu">
+        <h1>ADMIN</h1>
+        <div class="menu">
+          <a href="/">
+            <i class="fa-solid fa-bars"></i>
+            Home page
+          </a>
+          <a class="user" href="/login/admin">
+            <i class="fa-solid fa-users"></i>
+            User Management
+          </a>
+
+          <a class="content" href="/login/admin/songmanagement">
+            <i class="fa-solid fa-music"></i>
+            Song Management
+          </a>
+
+          <a class="playlist" href="/login/admin/playlistmanagement">
+            <i class="fa-solid fa-table-list"></i>
+            PlayList Management
+          </a>
+
+          <a class="active album" href="/login/admin/albummanagement">
+            <i class="fa-solid fa-compact-disc"></i>
+            ALbum Management
+          </a>
+          <a class="artist" href="/login/admin/artistmanagement">
+            <i class="fa-solid fa-microphone"></i>
+            Artist Management
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <header class="flex a-center p-fixed t-0 r-0">
+      <div class="account flex a-center">
+        <img src="image/Ellipse 2.png" alt="" />
+        <h4 class="name">Alex</h4>
+      </div>
+    </header>
+    <div class="main-page">
+      <!-- trang quản lí nội dung song playlist album -->
+      <div class="content-management">
+        <h2>Album Management</h2>
+        <!-- quản lí album có thể thêm xoá sửa -->
+        <div class="album-management">
+          <div class="header flex a-center">
+            <button class="arrange"><i
+                class="fa-solid fa-arrow-up-z-a"
+              ></i></button>
+            <h3>Ablum list</h3>
+            <form action="" class="search search-album">
+              <div class="input-group">
+                <label for="search-album">
+                  <i class="fa-solid fa-magnifying-glass"></i></label>
+                <input
+                  id="search-album"
+                  type="text"
+                  placeholder="Search for album"
+                />
+              </div>
+            </form>
+            <div class="line"></div>
+            <div class="style album flex a-center j-between">
+              {{#each albummanagement}}
+                <div class="style playlist flex a-center j-between">
+                  <div class="list-song">
+                    <a
+                      class="playlist-img"
+                      href="/login/admin/albummanagement/{{album_ID}}/albumsongmanagement"
+                    >
+
+                      <img src="{{album_img}}" alt="" />
+                    </a>
+                    <h4>{{album_name}}</h4>
+                    <span>{{artist_name}}</span>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <button
+            onclick="modal5Show()"
+            type="button"
+            class="btns btn-add-album"
+          >Add Album</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- modal xoá song -->
+  <div
+    id="delete-song-modal"
+    class="modal modal-delete"
+    tabindex="-1"
+    role="dialog"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Song</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to delete this Song</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            id="btn-delete-song"
+            type="button"
+            class="btn btn-primary"
+          >Save changes</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form method="post" name="delete-song-form"></form>
+  <div class="modal modal-5">
+    <div class="flex a-center j-center">
+      <form
+        method="post"
+        action="albummanagement/addAlbum"
+        class="modal-style song-information flex a-center j-between"
+      >
+        <h3>Song Information</h3>
+        <img src="/img/Rectangle 33.png" alt="" class="avatar-album" />
+        <label for="avatar" class="lable-edit">Edit Photo</label>
+        <input
+          type="file"
+          name="Image"
+          id="avatar"
+          accept="image/png, image/jpeg"
+        />
+
+        <div class="input-group">
+          <label for="name-album">Name Album</label>
+          <input
+            name="Name"
+            id="name-album"
+            type="text"
+            placeholder="Name Album"
+          />
+        </div>
+        <div class="input-group">
+
+          <select name="ArtistID" id="artist-select">
+            {{#each artist}}
+              <option value="{{ArtistID}}">{{Name}}</option>
+            {{/each}}
+          </select>
+
+        </div>
+        <button class="btn-save-song">
+          Save
+        </button>
+      </form>
+      <button onclick="modal5Close()" class="close-modal p-absolute"><i
+          class="fa-solid fa-xmark"
+        ></i></button>
+    </div>
+  </div>
+  <script src="/js/admin.js"></script>
+
+</body>

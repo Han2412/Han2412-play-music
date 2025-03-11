@@ -1,0 +1,140 @@
+<!-- phần nội dung chính của website -->
+
+<div id="home-mainpage" class="main-page">
+    <!-- banner của website  -->
+
+    {{!-- <div class="banner p-relative a-center j-center">
+        <div class="list-banner flex a-center j-center">
+            <div class="item">
+                <img class="img1" src="/img/Rectangle 96.png" alt="slider image 1 ">
+            </div>
+            <div class="item">
+                <img src="/img/Rectangle 95.png" alt="slider image 2">
+            </div>
+            <div class="item">
+                <img class="img1" src="/img/Rectangle 95.png" alt="slider image 1 ">
+            </div>
+            <div class="item">
+                <img src="/img/Rectangle 96.png" alt="slider image 2">
+            </div>
+        </div>
+    </div> --}}
+
+
+    <div id="musicData">
+        <!-- Dữ liệu được hiển thị sẽ được thêm vào div này -->
+    </div>
+
+
+    <section class="section-1">
+        <!-- phần gợi ý nghe nhạc cho người dùng -->
+        <div class="made-for-you">
+            <div class="title flex  a-center   ">
+                <h2>MADE FOR YOU</h2>
+                <button onclick="reloadPage()" type="button"><i class="fa-solid fa-rotate-right"></i></button>
+              
+                <a id="made-for-you-page" href="/madeforyou">See All</a>
+               
+            </div>
+
+
+            <div class="list-music flex a-center j-between ">
+
+                {{#each songData}}
+                <div class="music flex a-center ">
+                    <a href=""><img src="{{img_path}}" alt=""></a>
+                    <div class="detail">
+                        <h3>{{song_name}}</h3>
+                    </div>
+                    <button class="more-icon">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <ul class="drop-down-more">
+                            <li><a href="#">Add playlist</a></li>
+                            <li><a href="#">Add favourite song list</a></li>
+                            <li><a href="#">Share</a></li>
+                        </ul>
+                    </button>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </section>
+    <!-- phần thứ hai của web nghe nhạc  -->
+    <section class="section-2 flex  j-between ">
+        <div class="section-left">
+            <!-- xếp hạng các bài nhạc được nghe nhiều nhất  -->
+            <div class="top-charts">
+                <div class="title flex j-between a-center   ">
+                    <h2>TOP CHARTS</h2>
+                    <a id="top-chart-page" href="/topchart">See All</a>
+                </div>
+                 <div class="bottom-section">
+                <div class="media-list">
+
+                    {{#each topchart}}
+                    <div  li-index="{{link}}">  
+                    <div class="media-item flex a-center j-between">
+                        <div class="media-left flex a-center ">
+                            <a href=""><img src="{{song_img}}" alt=""></a>
+                            <div class="detail">
+                                <h3>{{song_name}}</h3>
+                                <a href="">{{artist_name}}</a>
+                            </div>
+                        </div>
+                            <div class="media-right">
+                                <span class="time">{{song_time}}</span>
+                                <button class="heart"><i class="fa-solid fa-heart unlike"></i></button>
+                                <button><i class="fa-solid fa-plus plus"></i></button>
+                            </div>
+                        </div>
+                     </div>
+                    {{/each}}
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-right">
+            <!-- danh sách các list nhạc có cùng chủ đề bài nhạc -->
+            <div class="play-list">
+                <div class="title flex j-between a-center   ">
+                    <h2>PLAYLIST</h2>
+                    <a id="playlist-page" href="/playlist">See All</a>
+                </div>
+
+                <div class="Music flex a-center j-between ">
+                    {{#each playlists}}
+                    <div class="list-song ">
+                        <a class="song" href="/playlist/{{PlaylistID}}"><img src="{{Image}}" alt=""></a>
+                        <h4>{{Name}}</h4>
+                        <a href="">{{Describe}}</a>
+                    </div>
+                    {{/each}}
+
+                </div>
+            </div>
+            <!-- danh sách bài hát của các nghệ sĩ -->
+            <div class="artist-wrapper">
+                <div class="title flex j-between a-center   ">
+                    <h2>Artist</h2>
+                    <a id="playlist-page" href="/artist">See All</a>
+                </div>
+                <div class="artist-list flex a-center j-between ">
+                    {{#each artists}}
+                    <div class="artist ">
+                        <a class="song" href="/artist/{{ArtistID}}"><img src="{{Image}}" alt=""></a>
+                        <h4>{{Name}}</h4>
+                        <span>{{Country}}</span>
+                    </div>
+                    {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="/js/presentplayed.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/js/main.js"></script>

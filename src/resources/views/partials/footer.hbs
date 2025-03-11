@@ -1,0 +1,86 @@
+
+
+<div class="player-control flex a-center j-between p-fixed b-0 l-0">
+  <div class="list-music flex">
+    <a href=""><img src="/img/Rectangle 33.png" alt="" /></a>
+    <div class="detail">
+      <h3>Ghostmusic</h3>
+      <a href="">Derva</a>
+    </div>
+  </div>
+  {{!-- <div class="control-bar flex a-center j-center"> --}}
+    {{!-- <div class="actions">
+      <button class="backward"><i
+          class="fa-solid fa-backward-step"
+        ></i></button>
+      <button class="pause"><i class="fa-solid fa-circle-pause"></i></button>
+      <button class="forward"><i class="fa-solid fa-forward-step"></i></button> --}}
+    {{!-- </div>
+    <div class="duration-bar flex a-center j-center">
+      <span class="tiem left">
+        00:00
+      </span>
+      <input
+        class="time-bar"
+        type="range"
+        oninput="setVolume()"
+        id="volume1"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0"
+        onclick="play() "
+      />
+      <span class="time right">
+        3:00
+      </span>
+    </div> --}}
+
+    <div class="control-bar flex a-center j-center">
+                
+                <div class="actions">
+                    <button class="backward"> <i  class="material-symbols-rounded">skip_previous</i></button>
+                    <button class="play-pause" ><i class="material-symbols-rounded">play_arrow</i></button>
+                    <button class="forward">  <i  class="material-symbols-rounded">skip_next</i></button>
+                </div>
+                <div class="duration-bar flex a-center j-center">
+                    <span class="tiem left">
+                        
+                    </span>
+                    {{!-- Thanh audio và audio --}}
+                    <div class="progress-area">
+                        
+                        <div class="progress-bar"></div>
+                            <audio id="main-audio" src="" ></audio>
+                     </div> 
+                     {{!--Thời gian thanh nhạc  --}}
+                      <div class="timer-duration">
+                            <span class="current">0:00</span>
+                            <span class="duration">--:--</span>
+                      </div>
+                    
+                    </span>
+                  </div>
+                </div>
+
+
+{{!-- <div class="player-control flex a-center j-between p-fixed b-0 l-0"> --}}
+    {{!-- <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/5KLL3jbaiks9Shy5ohz6oG?utm_source=generator&theme=0" width="100%"
+        height="100" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> --}}
+
+
+            <div class="volume flex a-center">
+                <i id="repeat-plist" class="material-symbols-rounded" title="Playlist looped">repeat</i>
+                <i   class="material-symbols-rounded lyrics-details_btn">lyrics</i>
+                <i class="material-symbols-rounded volume-btn">volume_up</i>               
+                <input type="range" min="0" max="100" id="volume_input" value="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+   {{!-- <script src="/js/madeforyou.js"></script> --}}
+

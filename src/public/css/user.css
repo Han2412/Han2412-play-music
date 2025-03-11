@@ -1,0 +1,287 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.j-between {
+  justify-content: space-between; }
+
+.j-center {
+  justify-content: center; }
+
+.j-start {
+  justify-content: flex-start; }
+
+.j-end {
+  justify-content: flex-end; }
+
+.a-start {
+  align-items: flex-start; }
+
+.a-end {
+  align-items: flex-end; }
+
+.a-center {
+  align-items: center; }
+
+.p-relative {
+  position: relative; }
+
+.p-absolute {
+  position: absolute; }
+
+.p-fixed {
+  position: fixed; }
+
+.t-0 {
+  top: 0; }
+
+.r-0 {
+  right: 0; }
+
+.l-0 {
+  left: 0; }
+
+.b-0 {
+  bottom: 0; }
+
+.z-1 {
+  z-index: 1; }
+
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px; }
+
+body::-webkit-scrollbar {
+  width: 5px; }
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ffdecd; }
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #17181d; }
+
+.main-container {
+  width: 100%;
+  height: 100vh; }
+
+.slide-page {
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #292c35; }
+  .slide-page .Menu {
+    padding: 25px 0 0 25px;
+    height: 35%;
+    width: 100%; }
+    .slide-page .Menu h1 {
+      font-size: 2em;
+      color: #ffdecd;
+      margin-bottom: 10px; }
+    .slide-page .Menu .menu-list {
+      width: 100%; }
+      .slide-page .Menu .menu-list a {
+        display: block;
+        color: #fcaf67;
+        font-size: 0.875em;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 30px;
+        transition: 0.3s;
+        border: 1px solid #ffdecd;
+        width: 90%;
+        padding: 10px 15px;
+        border-radius: 20px; }
+        .slide-page .Menu .menu-list a:hover {
+          transform: translateX(10px);
+          border: 1px solid #fcaf67;
+          background-color: #fcaf67;
+          color: #17181d; }
+        .slide-page .Menu .menu-list a.active {
+          transform: translateX(10px);
+          border: 1px solid #fcaf67;
+          background-color: #fcaf67;
+          color: #17181d; }
+        .slide-page .Menu .menu-list a i {
+          margin-right: 10px; }
+
+header {
+  width: 85%;
+  padding: 20px;
+  background-color: #17181d;
+  z-index: 999 !important; }
+  header .account {
+    margin-left: auto; }
+    header .account img {
+      width: 40px; }
+    header .account .name {
+      color: #ffdecd;
+      font-size: 1.25em;
+      font-style: normal;
+      font-weight: 700;
+      margin-left: 15px; }
+    header .account #login {
+      padding: 5px;
+      color: #ffdecd;
+      border: 1px solid #ffdecd;
+      margin-left: 5px;
+      cursor: pointer; }
+
+.main-page {
+  width: 85%;
+  background-color: #17181d;
+  padding: 75px 20px 0 20px;
+  margin-left: auto; }
+  .main-page .user-information {
+    height: 92vh;
+    flex-direction: column; }
+  .main-page h1 {
+    color: #fcaf67;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  .main-page img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px; }
+  .main-page .lable-edit {
+    padding: 5px 10px;
+    border: 1px solid #ffdecd;
+    color: #fcaf67;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px; }
+    .main-page .lable-edit:hover {
+      background-color: #fcaf67;
+      color: #ffffff;
+      border: 1px solid #fcaf67; }
+  .main-page input {
+    display: none; }
+  .main-page .information {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0 100px; }
+    .main-page .information .item-group {
+      width: 40%;
+      margin-bottom: 20px; }
+      .main-page .information .item-group span {
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 22px;
+        color: #ffdecd; }
+      .main-page .information .item-group h4 {
+        margin-top: 10px;
+        width: 100%;
+        border: 1px solid #ffdecd;
+        border-radius: 5px;
+        padding: 9px 12px;
+        color: #ffdecd; }
+  .main-page .button {
+    width: 50%; }
+
+.btns {
+  padding: 10px 20px;
+  color: #ffdecd;
+  border: 1px solid #fcaf67;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  cursor: pointer; }
+  .btns:hover {
+    background-color: #fcaf67;
+    color: #17181d;
+    border-radius: 20px; }
+
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(23, 24, 29, 0.8);
+  display: none; }
+
+.modal-style {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #fcaf67;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px #0d0e10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #17181d;
+  max-width: 900px;
+  flex-direction: column; }
+  .modal-style h3 {
+    color: #fcaf67;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  .modal-style img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px; }
+  .modal-style button {
+    padding: 5px 10px;
+    border: 1px solid #ffdecd;
+    color: #fcaf67;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px; }
+    .modal-style button:hover {
+      background-color: #fcaf67;
+      color: #ffffff;
+      border: 1px solid #fcaf67; }
+  .modal-style .lable-edit {
+    padding: 5px 10px;
+    border: 1px solid #ffdecd;
+    color: #fcaf67;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px; }
+    .modal-style .lable-edit:hover {
+      background-color: #fcaf67;
+      color: #ffffff;
+      border: 1px solid #fcaf67; }
+  .modal-style input {
+    display: none; }
+  .modal-style form {
+    width: 100%; }
+    .modal-style form .input-group {
+      width: 48%;
+      margin-bottom: 20px; }
+      .modal-style form .input-group label {
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 22px;
+        color: #ffdecd; }
+      .modal-style form .input-group input {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        border: 1px solid #ffdecd;
+        border-radius: 5px;
+        padding: 9px 12px;
+        color: #ffdecd; }
+        l .modal-style form .input-group input::placeholder {
+          font-weight: 400;
+          font-size: 14.4px;
+          line-height: 20px;
+          color: #ffdecd; }
+  .modal-style .changepassword {
+    margin: 0 auto;
+    width: 50%; }
+    .modal-style .changepassword .input-group {
+      width: 100%;
+      margin-bottom: 20px; }

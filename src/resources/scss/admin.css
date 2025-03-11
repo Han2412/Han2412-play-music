@@ -1,0 +1,547 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.j-start {
+  justify-content: flex-start;
+}
+
+.j-end {
+  justify-content: flex-end;
+}
+
+.a-start {
+  align-items: flex-start;
+}
+
+.a-end {
+  align-items: flex-end;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.t-0 {
+  top: 0;
+}
+
+.r-0 {
+  right: 0;
+}
+
+.l-0 {
+  left: 0;
+}
+
+.b-0 {
+  bottom: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ffdecd;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #17181d;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.slide-page {
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: #292c35;
+}
+.slide-page .Menu {
+  padding: 25px 0 0 25px;
+  height: 35%;
+  width: 100%;
+}
+.slide-page .Menu h1 {
+  font-size: 2em;
+  color: #ffdecd;
+  margin-bottom: 10px;
+}
+.slide-page .Menu .menu-list {
+  width: 100%;
+}
+.slide-page .Menu .menu-list a {
+  display: block;
+  color: #fcaf67;
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 30px;
+  transition: 0.3s;
+  border: 1px solid #ffdecd;
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+.slide-page .Menu .menu-list a:hover {
+  transform: translateX(10px);
+  border: 1px solid #fcaf67;
+  background-color: #fcaf67;
+  color: #17181d;
+}
+.slide-page .Menu .menu-list a.active {
+  transform: translateX(10px);
+  border: 1px solid #fcaf67;
+  background-color: #fcaf67;
+  color: #17181d;
+}
+.slide-page .Menu .menu-list a i {
+  margin-right: 10px;
+}
+
+header {
+  width: 85%;
+  padding: 20px;
+  background-color: #17181d;
+  z-index: 999 !important;
+}
+header .account {
+  margin-left: auto;
+}
+header .account img {
+  width: 40px;
+}
+header .account .name {
+  color: #ffdecd;
+  font-size: 1.25em;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 15px;
+}
+header .account #login {
+  padding: 5px;
+  color: #ffdecd;
+  border: 1px solid #ffdecd;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.main-page {
+  width: 85%;
+  background-color: #17181d;
+  padding: 75px 20px 0 20px;
+  margin-left: auto;
+}
+.main-page h2 {
+  font-size: 2em;
+  color: #fcaf67;
+  margin-bottom: 20px;
+}
+.main-page form {
+  width: 30%;
+}
+.main-page form .input-group {
+  background-color: #292c35;
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+.main-page form .input-group label {
+  font-size: 1em;
+  color: #ffffff;
+}
+.main-page form .input-group input {
+  width: 95%;
+  color: #ffdecd;
+  opacity: 0.8;
+}
+.main-page form .input-group input::-moz-placeholder {
+  color: #ffdecd;
+  font-size: 0.875em;
+}
+.main-page form .input-group input::placeholder {
+  color: #ffdecd;
+  font-size: 0.875em;
+}
+.main-page .header {
+  margin-bottom: 20px;
+}
+.main-page .header .arrange i {
+  color: #ffdecd;
+  border: 1px solid #ffdecd;
+  padding: 2px;
+  font-size: 0.7em;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.main-page .header h3 {
+  color: #ffdecd;
+  font-size: 1em;
+  font-weight: 600;
+}
+.main-page .header .line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+}
+.main-page .user-management {
+  display: block;
+  height: 100vh;
+}
+.main-page .user-management .user-list {
+  color: #ffdecd;
+  max-height: 700px;
+  overflow-y: scroll;
+}
+.main-page .user-management .user-list .user {
+  width: 80%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 0;
+  border: 1px solid #17181d;
+  transition: 0.3s;
+}
+.main-page .user-management .user-list .user .name img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.main-page .user-management .user-list .user .btn-RUD button {
+  cursor: pointer;
+}
+.main-page .user-management .user-list .user .btn-RUD button i {
+  padding: 10px;
+  color: #ffdecd;
+  margin-right: 10px;
+  font-size: 0.875em;
+  transition: 0.3s;
+}
+.main-page .user-management .user-list .user .btn-RUD button i:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.main-page .user-management .user-list .user:hover {
+  border-radius: 20px;
+  border: 1px solid #ffdecd;
+}
+.main-page .user-management .user-list::-webkit-scrollbar {
+  width: 5px;
+}
+.main-page .user-management .user-list::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ffdecd;
+}
+.main-page .user-management .user-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.main-page .content-management {
+  display: none;
+  height: 100%;
+}
+.main-page .content-management h4 {
+  font-size: 1.5em;
+  color: #ffdecd;
+  margin-bottom: 20px;
+}
+.main-page .content-management .music-list {
+  width: 100%;
+  max-height: 700px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+.main-page .content-management .music-list .music {
+  width: 48%;
+  padding: 10px;
+  border-radius: 0;
+  margin-bottom: 10px;
+  border: 1px solid #17181d;
+  transition: 0.3s;
+}
+.main-page .content-management .music-list .music img {
+  margin-right: 20px;
+  width: 50px;
+}
+.main-page .content-management .music-list .music h3 {
+  color: #ffdecd;
+  font-size: 1em;
+}
+.main-page .content-management .music-list .music span {
+  color: #ffdecd;
+  font-size: 1em;
+}
+.main-page .content-management .music-list .music .type-music {
+  font-size: 1em;
+  color: #ffdecd;
+}
+.main-page .content-management .music-list .music .btn-RUD .time {
+  display: block;
+  font-size: 1em;
+  font-weight: 400;
+  color: #ffdecd;
+  margin-right: 15px;
+}
+.main-page .content-management .music-list .music .btn-RUD button {
+  cursor: pointer;
+}
+.main-page .content-management .music-list .music .btn-RUD button i {
+  padding: 10px;
+  color: #ffdecd;
+  margin-right: 10px;
+  font-size: 0.875em;
+  transition: 0.3s;
+}
+.main-page .content-management .music-list .music .btn-RUD button i:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+.main-page .content-management .music-list .music:hover {
+  border-radius: 20px;
+  border: 1px solid #ffdecd;
+}
+.main-page .content-management .music-list::-webkit-scrollbar {
+  width: 2px;
+}
+.main-page .content-management .music-list::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ffdecd;
+}
+.main-page .content-management .music-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.main-page .content-management .style {
+  margin-top: 20px;
+}
+.main-page .content-management .style .list-song {
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.main-page .content-management .style .list-song .song {
+  position: relative;
+}
+.main-page .content-management .style .list-song .song img {
+  width: 120px;
+}
+.main-page .content-management .style .list-song .song::after {
+  content: "\f04b";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px;
+  font-size: 40px;
+  background-color: rgba(224, 145, 69, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.main-page .content-management .style .list-song .song::before {
+  content: "";
+  width: 100%;
+  height: 99%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.main-page .content-management .style .list-song .song:hover::before {
+  opacity: 0.5;
+  visibility: visible;
+}
+.main-page .content-management .style .list-song .song:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.main-page .content-management .style .list-song h4 {
+  font-size: 1em;
+  font-weight: 700;
+  color: #ffdecd;
+  margin: 6px 0;
+}
+.main-page .content-management .style .list-song a {
+  color: #ffdecd;
+  font-size: 0.7em;
+}
+.main-page .content-management .style .list-song:hover {
+  background: #f17a37;
+  box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.53) inset;
+}
+
+.btns {
+  padding: 10px 20px;
+  color: #ffdecd;
+  border: 1px solid #fcaf67;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btns:hover {
+  background-color: #fcaf67;
+  color: #17181d;
+  border-radius: 20px;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(23, 24, 29, 0.8);
+  display: none;
+}
+
+.modal-style {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #fcaf67;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px #0d0e10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #17181d;
+  max-width: 900px;
+  flex-direction: column;
+}
+.modal-style h3 {
+  color: #fcaf67;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.modal-style img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.modal-style button {
+  padding: 5px 10px;
+  border: 1px solid #ffdecd;
+  color: #fcaf67;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+.modal-style button:hover {
+  background-color: #fcaf67;
+  color: #ffffff;
+  border: 1px solid #fcaf67;
+}
+.modal-style .lable-edit {
+  padding: 5px 10px;
+  border: 1px solid #ffdecd;
+  color: #fcaf67;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+.modal-style .lable-edit:hover {
+  background-color: #fcaf67;
+  color: #ffffff;
+  border: 1px solid #fcaf67;
+}
+.modal-style input {
+  display: none;
+}
+.modal-style form {
+  width: 100%;
+}
+.modal-style form .input-group {
+  width: 48%;
+  margin-bottom: 20px;
+}
+.modal-style form .input-group label {
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 22px;
+  color: #ffdecd;
+}
+.modal-style form .input-group input {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  border: 1px solid #ffdecd;
+  border-radius: 5px;
+  padding: 9px 12px;
+  color: #ffdecd;
+}
+l .modal-style form .input-group input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 20px;
+  color: #ffdecd;
+}
+l .modal-style form .input-group input::placeholder {
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 20px;
+  color: #ffdecd;
+}
+
+#avatar {
+  display: none;
+}/*# sourceMappingURL=admin.css.map */

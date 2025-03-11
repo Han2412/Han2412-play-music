@@ -1,0 +1,79 @@
+<head>
+  <link rel="stylesheet" href="/css/topchart.css" />
+</head>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
+></script>
+
+<div class="main-page">
+
+    <section>
+        <div class="title flex a-center">
+            <h2>TOP CHART</h2>
+            <button id="play">
+                <i class="fa-solid fa-caret-right"></i>
+            </button>
+        </div>
+        <canvas id="myChart" style="width: 90%; height:300px;"></canvas>
+        <script>
+            // Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
+            const token = 'BQC32lhjQGYcwFxNK64vstrvYuJcHdVyGPQbqKxcZMtp4hsTdHCjvWauQjrsOgPJp7aUxqCeObVpns09mVoWaOxHjsI14X71VhPbTGkszhtkcy30k565d-FOcDlZNhHZW4wd7bzbPBhZMqZJR3CriVmOB5Xr3A8z4bwWxL06s_Czk3GGvqFjixV4iD3r0VWtoCHe5Uib8TETBG_fJbzve5Pz--4dHf_GZguboR2CsQ7ykgOZWTrHwk_autrb_ExYeLN7DtsQkAc41_rog9bmz12B';
+            async function fetchWebApi(endpoint, method, body) {
+                const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                    method,
+                    body: JSON.stringify(body)
+                });
+                return await res.json();
+            }
+
+            async function getTopTracks() {
+                // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+                return (await fetchWebApi(
+                    'v1/me/top/tracks?time_range=short_term&limit=5', 'GET'
+                )).items;
+            }
+
+            const topTracks = await getTopTracks();
+            console.log(
+                topTracks?.map(
+                    ({ name, artists }) =>
+                        `${name} by ${artists.map(artist => artist.name).join(', ')}`
+                )
+            );
+        </script>
+
+        <div class="media-list">
+
+            {{#each result}}
+            <div li-index = "{{song_id}}">
+            <div class="media-item flex a-center j-between">
+                <div class="media-left flex a-center ">
+                    <span class="rank is-top-1">1</span>
+                    <a href=""><img src="{{song_img}}" alt=""></a>
+                    <div class="detail">
+                        <h3>{{song_name}}</h3>
+                        <a href="">{{artist_name}}</a>
+                    </div>
+                </div>
+                <div class="media-right">
+                    <span class="time">{{song_time}}</span>
+                    <button class="heart "><i class="fa-solid fa-heart like"></i></button>
+                    <button class="plus"><i class="fa-solid fa-plus "></i></button>
+                </div>
+            </div>
+        </div>
+            {{/each}}
+        </div>
+     
+
+    </div>
+
+  </section>
+</div>
+<script src="/js/madeforyou.js"></script>
+<script src="/js/topchart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>

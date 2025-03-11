@@ -1,0 +1,122 @@
+<head>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body class="p-relative">
+  <div class="main-container">
+    <div class="slide-page p-fixed t-0 l-0">
+      <div id="Menu">
+        <h1>ADMIN</h1>
+        <div class="menu">
+          <a href="/">
+            <i class="fa-solid fa-bars"></i>
+            Home page
+          </a>
+          <a class="user" href="/login/admin">
+            <i class="fa-solid fa-users"></i>
+            User Management
+          </a>
+
+          <a class="active content" href="/login/admin/content">
+            <i class="fa-solid fa-music"></i>
+            Content Management
+          </a>
+
+          <a class="staticPay" href="">
+            <i class="fa-solid fa-chart-simple"></i>
+            Statistics And Payments
+          </a>
+
+          <a class="comment" href="">
+            <i class="fa-solid fa-comment"></i>
+            Comments And Reviews
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <header class="flex a-center p-fixed t-0 r-0">
+      <div class="account flex a-center">
+        <img src="image/Ellipse 2.png" alt="" />
+        <h4 class="name">Alex</h4>
+      </div>
+    </header>
+    <div class="main-page">
+      <div class="modal modal-7-edit">
+        <div class="flex a-center j-center">
+          {{#each songdetail}}
+            <form
+              method="post"
+              action="editsong"
+              id="editSongForm"
+              class="modal-style song-information flex a-center j-between"
+            >
+              <h3>Song Information</h3>
+              <img src="{{Image}}" alt="" class="avatar-playlist" />
+              <label for="avatar" class="lable-edit">Edit Photo</label>
+              <input
+                type="file"
+                name="Image"
+                id="avatar"
+                value="{{Image}}"
+                accept="image/png, image/jpeg"
+              />
+
+              <div class="input-group">
+                <label for="name-song">Name Song</label>
+                <input
+                  name="Name"
+                  id="name-song"
+                  value="{{Name}}"
+                  type="text"
+                  placeholder="Name Song"
+                />
+              </div>
+              <div class="input-group">
+                <label for="lyric">Lyric</label>
+                <textarea
+                  name="Lyric"
+                  id="lyric"
+                  cols="10"
+                  rows="10"
+                >{{Lyric}}</textarea>
+              </div>
+              <div class="input-group">
+                <label for="Link">Link Song</label>
+                <input
+                  name="Link"
+                  id="Link"
+                  type="link"
+                  value="{{Link}}"
+                  placeholder="Link Song"
+                />
+              </div>
+              <div class="input-group">
+                <label for="Time">Time</label>
+                <input
+                  value="{{Time}}"
+                  name="Time"
+                  id="Time"
+                  type="text"
+                  placeholder="Time"
+                />
+              </div>
+              <button class="btn-save-song">
+                Save
+              </button>
+            </form>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+
+</body>

@@ -1,0 +1,124 @@
+<head>
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+</head>
+
+<body class="p-relative">
+  <div class="main-container">
+    <div class="slide-page p-fixed t-0 l-0">
+      <div id="Menu">
+        <h1>ADMIN</h1>
+        <div class="menu">
+          <a href="/">
+            <i class="fa-solid fa-bars"></i>
+            Home page
+          </a>
+          <a class="active user" href="">
+            <i class="fa-solid fa-users"></i>
+            User Management
+          </a>
+
+          <a class="content" href="/login/admin/content">
+            <i class="fa-solid fa-music"></i>
+            Content Management
+          </a>
+
+          <a class="staticPay" href="">
+            <i class="fa-solid fa-chart-simple"></i>
+            Statistics And Payments
+          </a>
+
+          <a class="comment" href="">
+            <i class="fa-solid fa-comment"></i>
+            Comments And Reviews
+          </a>
+
+        </div>
+      </div>
+    </div>
+    <header class="flex a-center p-fixed t-0 r-0">
+      <div class="account flex a-center">
+        <img src="image/Ellipse 2.png" alt="" />
+        <h4 class="name">Alex</h4>
+      </div>
+    </header>
+    <div class="main-page">
+      <div class="modal modal-8">
+        <div class="flex a-center j-center">
+          {{#each usermangement}}
+            <form
+              method="post"
+              action="edit"
+              class="modal-style user-information flex a-center j-between"
+            >
+              <h3>Edit User Information</h3>
+              <img src="{{Image}}" alt="" class="avatar-playlist" />
+              <label for="avatar" class="lable-edit">Edit Photo</label>
+              <input
+                type="file"
+                name="Image"
+                id="avatar"
+                accept="image/png, image/jpeg"
+              />
+
+              <div class="input-group">
+                <label for="name-user">Name</label>
+                <input
+                  name="UserName"
+                  id="name-user"
+                  type="text"
+                  value="{{UserName}}"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-input">
+
+              </div>
+              <div class="input-group">
+                <label for="email">Your Email</label>
+                <input
+                  name="Email"
+                  id="email"
+                  type="text"
+                  value="{{Email}}"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="input-group">
+                <label for="password">Password</label>
+                <input
+                  name="Password"
+                  id="password"
+                  type="password"
+                  value="{{Password}}"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="input-group">
+                <label for="birthday">Your Birthday</label>
+                <input
+                  name="DateOfBirth"
+                  id="birthday"
+                  type="text"
+                  value="{{DateOfBirth}}"
+                  placeholder="Your Birthday"
+                />
+              </div>
+              <button class="btn-save">
+                Save
+              </button>
+            </form>
+            <div id="error-message" style="display: none;">
+              <p class="error-text">{{errorMessage}}</p>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

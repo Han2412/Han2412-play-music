@@ -1,0 +1,305 @@
+@import "flex";
+@import "variables";
+@import "position";
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: $text-color;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $bg-color;
+}
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-page {
+  width: 85%;
+  margin-left: auto;
+  background-color: $bg-color;
+  padding-bottom: 75px;
+  height: 100%;
+  header {
+    width: 100%;
+    padding: 20px;
+    .arrows {
+      margin-right: 60px;
+      button {
+        color: $text-color;
+        font-size: 1.25em;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+    }
+    form {
+      width: 50%;
+      .input-group {
+        background-color: $bg-slider;
+        padding: 10px;
+        border-radius: 20px;
+        label {
+          font-size: 1em;
+          color: #ffffff;
+        }
+        input {
+          width: 95%;
+          color: $text-color;
+          opacity: 0.8;
+          &::placeholder {
+            color: $text-color;
+            font-size: 0.875em;
+          }
+        }
+      }
+    }
+    .account {
+      margin-left: auto;
+      img {
+        width: 40px;
+      }
+      .name {
+        color: $text-color;
+        font-size: 1.25em;
+        font-style: normal;
+        font-weight: 700;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  section {
+    padding: 20px;
+    .title {
+      h2 {
+        background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5em;
+        margin-right: 20px;
+      }
+      #play {
+        font-size: 1.5em;
+        color: $bg-color;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: $text-color;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          background-color: $text-color-bold;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+#myChart {
+  width: 100%;
+  height: 200px;
+  margin: 20px 0;
+}
+
+.media-list {
+  width: 100%;
+  margin-top: 10px;
+  .media-item {
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+    .media-left {
+      .rank {
+        width: 60px;
+        min-width: 38px;
+        -webkit-text-stroke: 1.5px #fff;
+        opacity: 0.7;
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1;
+        text-align: center;
+        color: $bg-color;
+        white-space: nowrap;
+      }
+
+      .is-top-1 {
+        -webkit-text-stroke: 1px #e35050;
+        opacity: 1;
+      }
+      .is-top-2 {
+        -webkit-text-stroke: 1px #50e3c2;
+        opacity: 1;
+      }
+      .is-top-3 {
+        -webkit-text-stroke: 1px #4a90e2;
+        opacity: 1;
+      }
+      img {
+        margin-right: 20px;
+        width: 50px;
+      }
+      .detail {
+        h3 {
+          color: $text-color;
+          font-size: 1em;
+        }
+        a {
+          color: $text-color;
+          font-size: 0.7em;
+        }
+      }
+    }
+    .media-right {
+      .time {
+        font-size: 1em;
+        font-weight: 400;
+        color: $text-color;
+        margin-right: 15px;
+      }
+      button {
+        font-size: 1em;
+        font-weight: 600;
+        color: $text-color;
+        margin-right: 15px;
+        cursor: pointer;
+      }
+      .like {
+        color: #a50004;
+      }
+      .unlike {
+        color: $text-color;
+      }
+    }
+    &:hover {
+      border-radius: 20px;
+      background-color: $bg-icon-color;
+      box-shadow: 0px 3px 5px 5px rgba(0, 0, 0, 0.53) inset;
+    }
+  }
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba($bg-color, 0.8);
+  display: none;
+}
+.addplaylist {
+  padding: 20px;
+  border: 1px solid $text-color-bold;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px $bg-color-1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $bg-color;
+  max-width: 500px;
+  h3 {
+    color: $text-color-bold;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  input {
+    width: 100%;
+    border-bottom: 1px solid $text-color;
+    color: $text-color;
+    margin-bottom: 15px;
+    &::placeholder {
+      color: $text-color;
+      font-size: 0.875em;
+    }
+  }
+  .confirm {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+}
+.modal-2 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba($bg-color, 0.8);
+  display: none;
+  .addToPlaylist {
+    padding: 20px;
+    border: 1px solid $text-color-bold;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 4px $bg-color-1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $bg-color;
+    input {
+      padding: 5px 10px;
+      border: 1px solid $text-color;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      color: $text-color;
+      &::placeholder {
+        color: rgba($text-color, 0.5);
+        font-size: 0.875em;
+      }
+    }
+    .list-item {
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: 0.3s;
+      margin-bottom: 10px;
+      i {
+        font-size: 1em;
+        color: $text-color;
+        margin-right: 10px;
+      }
+      h3 {
+        font-size: 1em;
+        color: $text-color;
+      }
+      &:hover {
+        background-color: $text-color-bold;
+        opacity: 0.8;
+        border-radius: 20px;
+        i {
+          color: #333;
+        }
+        h3 {
+          color: #333;
+        }
+      }
+    }
+  }
+}

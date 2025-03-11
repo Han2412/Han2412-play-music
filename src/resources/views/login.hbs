@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Node.js Button Event</title>
+
+</head>
+
+<body>
+
+
+    <form class="flex a-center j-cente" 
+     method="post" action="/login" >
+
+        <div class="form">
+            <nav class="login-with flex a-center j-center">
+                <h1 class="flex a-center j-center">LOGIN </h1>
+                <ul>
+                    <li>
+                        <a href=""><img src="/img/googlelogo.png" alt="">
+                            <p>Continue with Google </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="/img/facebooklogo.png" alt="">
+                            <p>Continue with Facebook</p>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="">
+                            <p>Continue with Phone Number </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <div class="login flex">
+                <div class="lob ">
+                    <a class="a-login" href="#">Login</a>
+                </div>
+                <div class="lob">
+                    <a class="a-singin" href="/signup">Register</a>
+                </div>
+            </div>
+            <div class="input">
+                <input type="text" placeholder="E-mail Address" class="
+                E-mail " name="email" >
+                <input type="password" placeholder="Password" class="password" name="password">
+                <div style="color: red;  margin-top: 16px;" lass="error-message">
+
+     {{ errorMessage }}
+                </div>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" class="remember" name="remember" id="remember">
+                <label for="remember">Remmeber me</label>
+            </div>
+            <div class="login-to flex">
+
+                
+                    <div class="log">
+                        <div class="btn-login">
+
+                        <button  type="supmit" class="btn-login" >Login</button>
+                        </div>
+                    </div>
+
+                
+
+
+                <div class="forget">
+                    <a class="flex a-center j-center" href="#">
+                        Forget password?</a>
+                </div>
+
+            </div>
+            <div class="errorMessage"></div>
+             
+           
+            <footer class="flex">
+                <p class="flex a-center j-center">Or login with </p>
+                <a href="">Facebook</a>
+                <a href=""> Google </a>
+                <a href="">Apple</a>
+            </footer>
+
+
+        </div>
+
+    </form>
+    <div class="modal">
+        <div class="forgetPW">
+            <h2>Enter E-mail</h2>
+            <span>password in your E-mail !</span>
+            <input class="input-forget" type="text" placeholder="Enter E-mail">
+            <div class="message-modal"></div>
+            <div class="button flex j-end">
+                <buttom class="btn ok">ok</buttom>
+               
+
+                <buttom class="btn cancel">cancel</buttom>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script src="/js/login.js"></script>
+
+</html>

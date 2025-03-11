@@ -1,0 +1,280 @@
+@import "flex";
+@import "variables";
+@import "position";
+html,
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: $text-color;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $bg-color;
+}
+.main-container {
+  width: 100%;
+  height: 100vh;
+}
+.slide-page {
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $bg-slider;
+  .Menu {
+    padding: 25px 0 0 25px;
+    height: 35%;
+    width: 100%;
+    h1 {
+      font-size: 2em;
+      color: $text-color;
+      margin-bottom: 10px;
+    }
+    .menu-list {
+      width: 100%;
+      a {
+        display: block;
+        color: $text-color-bold;
+        font-size: 0.875em;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 30px;
+        transition: 0.3s;
+        border: 1px solid $text-color;
+        width: 90%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        &:hover {
+          transform: translateX(10px);
+          border: 1px solid $text-color-bold;
+          background-color: $text-color-bold;
+          color: $bg-color;
+        }
+        &.active {
+          transform: translateX(10px);
+          border: 1px solid $text-color-bold;
+          background-color: $text-color-bold;
+          color: $bg-color;
+        }
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+header {
+  width: 85%;
+  padding: 20px;
+  background-color: $bg-color;
+  z-index: 999 !important;
+  .account {
+    margin-left: auto;
+    img {
+      width: 40px;
+    }
+    .name {
+      color: $text-color;
+      font-size: 1.25em;
+      font-style: normal;
+      font-weight: 700;
+      margin-left: 15px;
+    }
+    #login {
+      padding: 5px;
+      color: $text-color;
+      border: 1px solid $text-color;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  }
+}
+.main-page {
+  width: 85%;
+  background-color: $bg-color;
+  padding: 75px 20px 0 20px;
+  margin-left: auto;
+  .user-information {
+    height: 92vh;
+    flex-direction: column;
+  }
+  h1 {
+    color: $text-color-bold;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .lable-edit {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+  input {
+    display: none;
+  }
+  .information {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 0 100px;
+    .item-group {
+      width: 40%;
+      margin-bottom: 20px;
+      span {
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 22px;
+        color: $text-color;
+      }
+      h4 {
+        margin-top: 10px;
+        width: 100%;
+        border: 1px solid $text-color;
+        border-radius: 5px;
+        padding: 9px 12px;
+        color: $text-color;
+      }
+    }
+  }
+  .button {
+    width: 50%;
+  }
+}
+.btns {
+  padding: 10px 20px;
+  color: $text-color;
+  border: 1px solid $text-color-bold;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $text-color-bold;
+    color: $bg-color;
+    border-radius: 20px;
+  }
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba($bg-color, 0.8);
+  display: none;
+}
+.modal-style {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid $text-color-bold;
+  border-radius: 10px;
+  box-shadow: 0 0 4px 4px $bg-color-1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $bg-color;
+  max-width: 900px;
+  flex-direction: column;
+  h3 {
+    color: $text-color-bold;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+  .lable-edit {
+    padding: 5px 10px;
+    border: 1px solid $text-color;
+    color: $text-color-bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    &:hover {
+      background-color: $text-color-bold;
+      color: #ffffff;
+      border: 1px solid $text-color-bold;
+    }
+  }
+  input {
+    display: none;
+  }
+  form {
+    width: 100%;
+    .input-group {
+      width: 48%;
+      margin-bottom: 20px;
+      label {
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 22px;
+        color: $text-color;
+      }
+      input {
+        margin-top: 10px;
+        display: block;
+        width: 100%;
+        border: 1px solid $text-color;
+        border-radius: 5px;
+        padding: 9px 12px;
+        color: $text-color;
+        l &::placeholder {
+          font-weight: 400;
+          font-size: 14.4px;
+          line-height: 20px;
+          color: $text-color;
+        }
+      }
+    }
+  }
+  .changepassword {
+    margin: 0 auto;
+    width: 50%;
+    .input-group {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
